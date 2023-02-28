@@ -7,13 +7,13 @@ if __name__ == "__main__":
 
 #git init
 #git add filename   this is for one file
-#git add .          this is for adding all the things to commit later
+#git add . (new changes - 1)         this is for adding all the things to commit later
 #git status
 #git log
-#git commit -m <a message>
+#git commit -m "a message" (new changes - 2) 
 
 #git remote add origin <github url>
-#git push origin main 
+#git push origin main (new changes - 3)
 
 #email: admin@gmail.com
 #password: admin12345
