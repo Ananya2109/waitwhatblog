@@ -9,13 +9,21 @@
             <a href="/posts/{{ post.user.username }}">{{post.user.username}}</a>
             <div>
                 {{post.likes|length}}
-                <i class="fa-regular fa-heart"></i>
+                {% if user.id in post.likes|map(attribute="author")|list %}
+                    <a href="/like-post/{{post.id}}"> 
+                        <i class="fa-solid fa-heart"></i>
+                    </a>
+                {% else %}
+                    <a href="/like-post/{{post.id}}"> 
+                        <i class="fa-regular fa-heart"></i>
+                    </a>
+                {% endif %}
                 {% if user.id == post.author %}
-                <div class="btn-group">
-                    <button type="button" class= "btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown"></button>
+                 <div class="btn-group">
+                    <button type="button" class= "btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown"></button>
                         <ul class = "dropdown-menu">
                             <li>
-                                 <a href="/delete-post/{{ post.id }}" class="dropdown-item">Delete</a>
+                                 <a href="/delete-post/{{post.id}}" class="dropdown-item">Delete</a>
                             </li>
                      </ul>
                  </div>
